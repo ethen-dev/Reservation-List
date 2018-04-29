@@ -33,16 +33,16 @@ const NewReservation = {
             <p>Fecha
             </p>
 
-            <select v-model="sDay">
+            <select v-model="sDay" v-bind:class="{warning: fail}">
                 <option v-for="day in days" v-bind:value="day.value">{{day.text}}</option>
             </select>
-            <select v-model="sMonth">
+            <select v-model="sMonth" v-bind:class="{warning: fail}">
                 <option v-for="month in months" v-bind:value="month.value">{{month.text}}</option>
             </select>
-            <select v-model="sYear">
+            <select v-model="sYear" v-bind:class="{warning: fail}">
                 <option v-for="year in years" v-bind:value="year.value">{{year.text}}</option>
             </select>
-            <select v-model="sHour">
+            <select v-model="sHour" v-bind:class="{warning: fail}">
                 <option v-for="hour in hours" v-bind:value="hour.value">{{hour.text}}</option>
             </select>
         </div>
@@ -96,7 +96,8 @@ const NewReservation = {
             sYear: '',
             sHour: '',
             sCom: '',
-            warning: ''
+            warning: '',
+            fail: false
         };
     },
     mounted() {
@@ -143,6 +144,7 @@ const NewReservation = {
                 })
                 this.$router.push('/');
             } else {
+                this.fail = true;
                 this.warning = 'La fecha de la reserva ha de ser al menos, 24h posterior a la fecha actual'
             }
         },
@@ -164,6 +166,7 @@ const NewReservation = {
                 });
                 this.$router.push('/');
             } else {
+                this.fail = true;
                 this.warning = 'La fecha de la reserva ha de ser al menos, 24h posterior a la fecha actual'
             }
         },

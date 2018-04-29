@@ -38,3 +38,7 @@ button {
 p {
     font-weight: bold;
 }
+
+.warning{
+    border-color: red;
+}
