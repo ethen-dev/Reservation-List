@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase-firestore.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vuex@2.0.0"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <router-view></router-view>
+    </div>
+    <script src="database/connect.js"></script>
+    <script src="components/Detail.js"></script>
+    <script src='components/NewReservation.js'></script>
+    <script src='components/ReservationList.js'></script>
+    <script src="controller/store.js"></script>
+    <script src='controller/router.js'></script>
+    <script src='controller/vue.js'></script>
+</body>
+</html>
